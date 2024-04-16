@@ -3,23 +3,33 @@ import "bootstrap/scss/bootstrap.scss";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "./auth.scss";
 
-let books = document.querySelectorAll('.card');
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-for (let i = 0; i < books.length; i++) {
-    books[i].addEventListener('click', e => {
-        if(e.target.tagName === "INPUT") {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://bookshop.local:3000/buy");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onloadend = function () {
-                if (xhr.status == 200) {
-                    console.log(xhr.responseText);
-                }
-            }
-            xhr.send('{"book_id": 1}');
-        }
-    });
-}
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
+
+
+
+
+// let books = document.querySelectorAll('.card');
+
+// for (let i = 0; i < books.length; i++) {
+//     books[i].addEventListener('click', e => {
+//         if(e.target.tagName === "INPUT") {
+//             let xhr = new XMLHttpRequest();
+//             xhr.open("POST", "http://bookshop.local:3000/buy");
+//             xhr.setRequestHeader("Content-Type", "application/json");
+//             xhr.onloadend = function () {
+//                 if (xhr.status == 200) {
+//                     console.log(xhr.responseText);
+//                 }
+//             }
+//             xhr.send('{"book_id": 1}');
+//         }
+//     });
+// }
 
 // let submitBtn = document.querySelector("#auth-submit");
 // if (submitBtn){

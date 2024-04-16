@@ -15,24 +15,24 @@ function error_log(err) {
 }
 
 // Настройка клиент Redis
-const redisClient = redis.createClient({
-    host: '127.0.0.1',
-    port: 6379
-});
-redisClient.connect().catch(error_log);
+// const redisClient = redis.createClient({
+//     host: '127.0.0.1',
+//     port: 6379
+// });
+// redisClient.connect().catch(error_log);
 
-// Создание хранилища
-let redisStore = new RedisStore({
-    client: redisClient,
-    prefix: "bookshop:",
-});
+// // Создание хранилища
+// let redisStore = new RedisStore({
+//     client: redisClient,
+//     prefix: "bookshop:",
+// });
 
 const app = express();
 app.set('view engine', 'pug');
 app.use('/media', express.static('media'));
 app.use(express.json());
 app.use(session({
-    store: redisStore,
+    // store: redisStore,
     secret: 'eptBATPhykOaN8LqWvl38KGdGa8ZRc60',
     resave: false,
     saveUninitialized: true,
@@ -85,6 +85,14 @@ app.get('/auth', (req, res) => {
     res.render("auth", { page: "auth", errors: [] });
 });
 
+
+/**
+ * Страница корзины
+ */
+app.get('/cart', (req, res) => {
+    res.render("main");
+})
+
 /**
  * Эндпойнт обработки формы авторизации
  */
@@ -116,10 +124,6 @@ app.post('/auth',
         }
     }
 );
-
-app.get("/time", (req, res) => {
-    res.render("time");
-})
 
 app.listen(3000, () => {
     console.log(`Server started by address: http://bookshop.local:3000`);

@@ -6,29 +6,8 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon")
     body
-        header
-            nav.navbar.navbar-expand-lg.bg-body-tertiary
-                div.container-fluid.justify-content-between
-                    a.navbar-brand(href="/") BookShop
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    div.collapse.navbar-collapse#navbarNavAltMarkup
-                        .navbar-nav
-                            a(class=["nav-link", page == "main" ? "active" : ""] aria-current="page" href="/") Home
-                            a(class=["nav-link", page == "profile" ? "active" : ""] href="/profile") Profile
-                            a(class=["nav-link", page == "order" ? "active" : ""] href="/order") Order
-                    if user
-                        span Hello #{user}
-                        a.btn.btn-primary(href="/logout") Logout
-                        a.btn.btn-success(href="/profile")
-                            i.bi.bi-person-fill
-                    else
-                        a.btn.btn-primary(href="/auth") Login
+        div#root
         block content
         //- footer
         footer
-        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-        script(src="/media/react-test.js")
         <script src="/media/index.bundle.js"></script>
