@@ -5,10 +5,10 @@ import {
 } from "react-router-dom";
 
 import Header from "./Header.jsx";
-import Profile from "./components/Profile.jsx";
-import Gallery from "./components/Gallery.jsx";
-import Cart from "./components/Cart.jsx";
-import Order from "./components/Order.jsx";
+import Profile from "./Profile.jsx";
+import Gallery from "./Gallery.jsx";
+import Cart from "./Cart.jsx";
+import Order from "./Order.jsx";
 
 
 const router = createBrowserRouter([

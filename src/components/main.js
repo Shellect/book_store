@@ -1,7 +1,7 @@
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/scss/bootstrap.scss";
 import "bootstrap-icons/font/bootstrap-icons.scss";
-import "./auth.scss";
+import "../app/auth.scss";
 
 import React from "react";
 import { createRoot } from "react-dom/client";

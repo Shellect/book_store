@@ -5,7 +5,7 @@ export default function Header() {
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid justify-content-between">
-                    <a className="navbar-brand" href="/">BookShop</a>
+                    <a className="navbar-brand" href="/home/student/PhpstormProjects/book_store/public">BookShop</a>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -20,7 +20,7 @@ export default function Header() {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         {/* TODO: active page need */}
                         <div className="navbar-nav">
-                            <a className="nav-link" href="/">
+                            <a className="nav-link" href="/home/student/PhpstormProjects/book_store/public">
                                 Home
                             </a>
                             <a className="nav-link" href="/profile">
