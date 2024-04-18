@@ -1,6 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
+let links = [
+    { "text": "Home", to: "/" },
+    { "text": "Profile", to: "/profile" },
+    { "text": "Order", to: "/order" },
+    { "text": "Cart", to: "/cart" }
+]
 
 export default function Header() {
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -18,20 +27,13 @@ export default function Header() {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        {/* TODO: active page need */}
                         <div className="navbar-nav">
-                            <a className="nav-link" href="/">
-                                Home
-                            </a>
-                            <a className="nav-link" href="/profile">
-                                Profile
-                            </a>
-                            <a className="nav-link" href="/order">
-                                Order
-                            </a>
-                            <a className="nav-link" href="/cart">
-                                Cart
-                            </a>
+                            {links.map(({ text, to }) => <NavLink
+                                className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}
+                                to={to}>
+                                {text}
+                            </NavLink>
+                            )}
                         </div>
                     </div>
                     {/* TODO: if block */}

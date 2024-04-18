@@ -14,25 +14,12 @@ function error_log(err) {
     console.log(err);
 }
 
-// Настройка клиент Redis
-// const redisClient = redis.createClient({
-//     host: '127.0.0.1',
-//     port: 6379
-// });
-// redisClient.connect().catch(error_log);
-
-// // Создание хранилища
-// let redisStore = new RedisStore({
-//     client: redisClient,
-//     prefix: "bookshop:",
-// });
 
 const app = express();
 app.set('view engine', 'pug');
 app.use('/media', express.static('media'));
 app.use(express.json());
 app.use(session({
-    // store: redisStore,
     secret: 'eptBATPhykOaN8LqWvl38KGdGa8ZRc60',
     resave: false,
     saveUninitialized: true,
@@ -40,19 +27,7 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    fs.readFile(__dirname + "/books.json", (err, data) => {
-        if (err) {
-            error_log(err);
-        }
-        res.render(
-            "catalog",
-            {
-                cards: JSON.parse(data),
-                page: "main",
-                user: req.session.user
-            }
-        )
-    })
+        res.render("main");
 });
 
 
@@ -75,7 +50,7 @@ app.get('/order', (req, res) => {
  * Страница профиля пользователя
  */
 app.get('/profile', (req, res) => {
-    res.render("profile", { page: "profile" });
+    res.render("main");
 });
 
 /**
