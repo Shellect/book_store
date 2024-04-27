@@ -1,0 +1,1 @@
+export type CardsType = { id: number, title: string, text: string, price: number, image: string };

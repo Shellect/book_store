@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    env_file:
+      .env
+    networks:
+      - bookshop
+  next:
+    build: ./
+    ports:
+      - 3000:3000
+    networks:
+      - bookshop
+
+networks:
+  bookshop:
+    driver: bridge

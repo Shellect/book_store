@@ -1,10 +1,11 @@
-import React from "react";
+import {CardsType} from "../lib/definitions";
+import Image from "next/image";
 
-export default function Card({title, author, image}) {
+export default function Card({title, author, image} : CardsType) {
     return (
         <div className="col">
             <div className="card h-100">
-                <img src={image} alt="" className="card-img-top" />
+                <Image src={image} alt="" className="card-img-top" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{author}</p>

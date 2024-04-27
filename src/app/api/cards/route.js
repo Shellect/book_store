@@ -1,5 +1,4 @@
-import React from "react";
-import Card from "./Card.jsx";
+export const dynamic = 'force-dynamic' // defaults to auto
 
 let books = [
     {
@@ -22,18 +21,12 @@ let books = [
     }
 ];
 
-export default function Gallery() {
-    let cards = books.map(book => <Card {...book} key={book.id} />)
-
-    return (
-        <main className="container">
-            <div className="row mt-3">
-                <div className="col">
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                        {cards}
-                    </div>
-                </div>
-            </div>
-        </main>
-    );
+export async function GET() {
+    return new Response(JSON.stringify(books),
+        {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+    )
 }

@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 const { body, validationResult } = require('express-validator');
 const fs = require("fs");
 const session = require('express-session');
-const redis = require("redis");
-const RedisStore = require("connect-redis").default
 
 function error_log(err) {
     let d = new Date();
