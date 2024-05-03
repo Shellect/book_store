@@ -1,5 +1,5 @@
 /node_modules/
 error_report.log
-/media
+/public
 .idea
 .env
