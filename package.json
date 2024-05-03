@@ -7,7 +7,9 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "prisma generate",
+    "deploy": "prisma migrate deploy"
   },
   "keywords": [],
   "author": "",

@@ -1,11 +1,11 @@
 "use client";
-import {useRouter} from "next/router";
+import {usePathname} from "next/navigation";
 import Link from "next/link";
 
 export default function ActiveLink({href, activeClassName, className, children}) {
-    const router = useRouter();
+    const pathname = usePathname();
 
-    if (router.pathname == href) {
+    if (pathname == href) {
         className = activeClassName;
     }
 

@@ -1,17 +1,33 @@
 services:
-  mysql:
+  bookshop-mysql:
     image: mysql:latest
     restart: always
     env_file:
       .env
     networks:
       - bookshop
-  next:
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1
+      start_period: 50s
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  bookshop-next:
     build: ./
     ports:
       - 3000:3000
     networks:
       - bookshop
+    env_file:
+      - .env
+    volumes:
+      - ./prisma:/app/prisma
+      - ./src:/app/src
+      - ./public:/app/public
+    depends_on:
+      bookshop-mysql:
+        condition: service_healthy
+
 
 networks:
   bookshop:

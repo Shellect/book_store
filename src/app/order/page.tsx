@@ -9,7 +9,7 @@ export default function Order() {
                                 <label htmlFor="" className="form-label">Book:</label>
                             </div>
                             <div className="col-9">
-                                <input className="form-control" type="text" disabled="disabled" id="book-name"
+                                <input className="form-control" type="text" disabled={true} id="book-name"
                                        name="book_name"/>
                             </div>
                             <div className="row mt-3">

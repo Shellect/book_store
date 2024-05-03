@@ -1,4 +1,4 @@
-export default function Auth({errors}) {
+export default function Auth() {
 
     return (
         <div className="wrapper">
@@ -6,14 +6,14 @@ export default function Auth({errors}) {
                 <div className="mb-3 input-group">
                     <i className="bi bi-person-fill input-group-text"/>
                     <input id="username" className="form-control" name="username" placeholder="My name is"/>
-                    {errors.map((error, i) => <span key={i}
-                        className="text-danger">{error.path == 'username' ? error.msg : ""}</span>)}
+                    {/*errors.map((error, i) => <span key={i}
+                        className="text-danger">{error.path == 'username' ? error.msg : ""}</span>)*/}
                 </div>
                 <div className="mb-3 input-group">
                     <i className="bi bi-lock-fill input-group-text"/>
                     <input id="password" className="form-control" type="password" name="password"/>
-                    {errors.map((error, i) => <span key={i}
-                        className="text-danger">{error.path == 'password' ? error.msg : ""}</span>)}
+                    {/*errors.map((error, i) => <span key={i}
+                        className="text-danger">{error.path == 'password' ? error.msg : ""}</span>)*/}
                 </div>
                 <div>
                     <input id="auth-submit" type="submit" value="Sign in"/>

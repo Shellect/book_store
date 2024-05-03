@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
 }
 
 datasource db {
@@ -16,7 +17,6 @@ datasource db {
 model Book {
   id Int @id @default(autoincrement())
   title String
-  text String
-  price Int
+  author String
   image String
 }
