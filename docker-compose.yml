@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 5
   bookshop-next:
-    build: ./
+    build: ./.docker/next
     ports:
       - 3000:3000
     networks:
@@ -27,6 +27,11 @@ services:
     depends_on:
       bookshop-mysql:
         condition: service_healthy
+  bookshop-redis:
+    image: redis:7.0.11
+    networks:
+      - bookshop
+
 
 
 networks:
