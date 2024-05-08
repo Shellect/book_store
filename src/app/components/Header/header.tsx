@@ -1,13 +1,13 @@
-import ActiveLink from "./activeLink";
+import ActiveLink from "../activeLink";
 import Link from "next/link";
 
-export default function Header() {
+export function Header() {
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-warning">
                 <div className="container-fluid">
                     {/*Logo*/}
-                    <a href="src/app/components/header#" className="navbar-brand">Navbar</a>
+                    <a href="/home/oleg/PhpstormProjects/book_store/public" className="navbar-brand">Navbar</a>
 
                     {/*Burger button*/}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="main-navbar">

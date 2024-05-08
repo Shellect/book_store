@@ -8,6 +8,8 @@
 
 1. Copy ```.dev.env``` file to ```.env```
 2. Replace variables inside ```.env``` file to your own
-3. Run ```docker compose up -d``` command for  start
-4. Write some code
-5. Enjoy
+3. Execute in terminal ```openssl rand -base64 32```
+4. Copy 32-chracter random string to the ```SESSION_SECRET``` variable in the .env file 
+5. Run ```docker compose up -d``` command for  start
+6. Write some code
+7. Enjoy

@@ -1,13 +1,8 @@
 import {PrismaClient} from "@prisma/client";
 import Card from "../components/card";
-import type {Metadata} from 'next';
+
 
 const prisma = new PrismaClient();
-
-export const metadata: Metadata = {
-    title: 'Магазин книг',
-    description: 'Лучшие книги с доставкой по Краснодару',
-}
 
 export default async function Gallery() {
     let books = await prisma.book.findMany();
