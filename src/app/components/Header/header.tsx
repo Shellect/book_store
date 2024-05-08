@@ -4,10 +4,10 @@ import Link from "next/link";
 export function Header() {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg bg-body-warning">
+            <nav className="navbar navbar-expand-lg bg-body-yellow">
                 <div className="container-fluid">
                     {/*Logo*/}
-                    <a href="/home/oleg/PhpstormProjects/book_store/public" className="navbar-brand">Navbar</a>
+                    <Link href="/" className="navbar-brand text-white">Book store</Link>
 
                     {/*Burger button*/}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="main-navbar">
@@ -24,7 +24,7 @@ export function Header() {
                     </div>
                     {/* TODO: if block */}
                     <Link className="btn btn-primary" href="/login">
-                        Login
+                        Login/Register
                     </Link>
                 </div>
             </nav>
