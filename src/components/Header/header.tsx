@@ -23,9 +23,8 @@ export function Header() {
                         </div>
                     </div>
                     {/* TODO: if block */}
-                    <Link className="btn btn-primary" href="/login">
-                        Login/Register
-                    </Link>
+                    <Link className="btn btn-light" href="/auth/login">Login</Link>
+                    <Link className="btn btn-light ms-3" href="/auth/register">Register</Link>
                 </div>
             </nav>
         </header>

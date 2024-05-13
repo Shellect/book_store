@@ -1,13 +1,13 @@
+import "./auth.scss";
+import "bootstrap-icons/font/bootstrap-icons.scss";
 
-import {RegistrationForm} from "../components/registrationForm";
-
-export default function RegisterScreen() {
+export default function ({children}) {
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col-12 col-md-4 offset-md-4">
-                    <RegistrationForm />
+                    {children}
                 </div>
             </div>
         </div>

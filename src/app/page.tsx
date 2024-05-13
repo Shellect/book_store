@@ -1,4 +1,4 @@
-import Gallery from "./components/gallery";
+import Gallery from "../components/gallery";
 import type {Metadata} from 'next';
 
 export const metadata: Metadata = {

@@ -14,8 +14,9 @@ RUN npm ci
 FROM base AS runner
 WORKDIR /app
 
-COPY --from=deps /app/package.json ./
+COPY --from=deps /app/package.json ./package.json
 COPY --from=deps /app/node_modules ./node_modules
+COPY ./tsconfig.json ./tsconfig.json
 COPY ./app.sh ./app.sh
 RUN ["chmod", "+x", "/app/app.sh"]
 CMD ./app.sh

@@ -6,7 +6,7 @@ export default function ThankYouPage({username, book, date, address}) {
                     <p>{username + ", thanks for the order!"}</p>
                     <p>{"Book \"" + book + "\" will be delivered on " + date + " to " + address}</p>
                     <p className="d-grid">
-                        <a className="btn btn-success" href="/">Home</a>
+                        <a className="btn btn-success" href="/home/oleg/PhpstormProjects/book_store/public">Home</a>
                     </p>
                 </div>
             </div>

@@ -3,10 +3,7 @@ import {CardsType} from "../lib/definitions";
 import Image from "next/image";
 
 function selectBook(id) {
-    const books = JSON.parse(localStorage.getItem("cart")) || {};
-    books[id] = (books[id] || 0) + 1;
 
-    localStorage.setItem("cart", JSON.stringify(books));
 }
 
 export default function Card({id, title, author, image} : CardsType) {
@@ -19,7 +16,8 @@ export default function Card({id, title, author, image} : CardsType) {
                     <p className="card-text">{author}</p>
                 </div>
                 <div className="card-footer">
-                    <input type="button" value="Select" className="btn btn-success" onClick={() => selectBook(id)} />
+                    <input type="button" value="Add to cart" className="btn btn-warning" onClick={() => selectBook(id)} />
+                    <input type="button" value="Add to favorite" className="btn btn-warning"/>
                 </div>
             </div>
         </div>
