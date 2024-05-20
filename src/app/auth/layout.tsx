@@ -1,4 +1,3 @@
-import "./auth.scss";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 
 export default function ({children}) {

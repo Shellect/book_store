@@ -7,7 +7,7 @@ export const SignUpSchema = z.object({
         .trim(),
     email: z
         .string({required_error: "Email is required"})
-        .email({message: "Please enter a valid email"})
+        .email({message: "Please enter a valid value"})
         .trim(),
     password: z
         .string({required_error: "Password is required"})

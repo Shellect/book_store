@@ -15,7 +15,7 @@ export const {auth, handlers, signOut} = NextAuth({
             authorize: async (credentials) => {
                 let user = null;
 
-                // logic to salt and hash password
+                // logic to salt and hash value
                 const pwHash = saltAndHashPassword(credentials.password)
 
                 // logic to verify if user exists

@@ -6,10 +6,3 @@ body{
 .bg-body-yellow{
   background: #f5ba1a;
 }
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-}
