@@ -1,4 +1,4 @@
-import {signIn} from "@/auth.ts";
+import {signIn} from "@/lib/auth.ts";
 import Link from "next/link";
 
 export default function () {
@@ -9,10 +9,7 @@ export default function () {
                     <h2>Authorisation</h2>
                 </div>
                 <div className="row clearfix">
-                    <form action={async () => {
-                        "use server";
-                        await signIn();
-                    }}>
+                    <form action={signIn}>
                         {/*<span className="text-danger">Проверьте введенные данные</span>)*/}
                         <div className="input_field">
                             <span><i className="bi bi-user"></i></span>

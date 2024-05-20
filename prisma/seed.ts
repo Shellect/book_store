@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 async function main() {
     const content = await fs.readFile(path.resolve(__dirname, "books.json"), "utf-8");
     const data = JSON.parse(content);
-    data.forEach((async data => await prisma.book.create({data})));
+    prisma.book.createMany({data, skipDuplicates: true});
 }
 
 main()
