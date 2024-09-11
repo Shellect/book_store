@@ -5,9 +5,12 @@ import {PrismaClient} from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+    await prisma.book.deleteMany();
     const content = await fs.readFile(path.resolve(__dirname, "books.json"), "utf-8");
     const data = JSON.parse(content);
-    prisma.book.createMany({data, skipDuplicates: true});
+    for (let i = 0; i < data.length; i++) {
+        await prisma.book.create({data: data[i]});
+    }
 }
 
 main()

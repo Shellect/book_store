@@ -1,6 +1,6 @@
 import {Dispatch, SetStateAction, useId} from "react";
 
-export function InputField (
+export default function (
     {
         type,
         placeholder,

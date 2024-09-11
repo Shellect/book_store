@@ -1,10 +1,7 @@
 "use client";
-import {CardsType} from "../lib/definitions";
+import {CardsType} from "@/lib/definitions";
 import Image from "next/image";
-
-function selectBook(id) {
-
-}
+import {selectBook} from "@/app/actions";
 
 export default function Card({id, title, author, image} : CardsType) {
     return (
@@ -16,8 +13,8 @@ export default function Card({id, title, author, image} : CardsType) {
                     <p className="card-text">{author}</p>
                 </div>
                 <div className="card-footer">
-                    <input type="button" value="Add to cart" className="btn btn-warning" onClick={() => selectBook(id)} />
-                    <input type="button" value="Add to favorite" className="btn btn-warning"/>
+                    <input type="button" value="Add to cart" className="btn btn-warning me-1" onClick={() => selectBook(id)} />
+                    <button type="button" className="btn btn-outline-warning"><i className="bi bi-heart"></i></button>
                 </div>
             </div>
         </div>

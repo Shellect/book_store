@@ -1,5 +1,6 @@
 import "bootstrap/scss/bootstrap.scss";
-import {Header} from "@/components/Header";
+import "bootstrap-icons/font/bootstrap-icons.scss";
+import {Header} from "@/components/ui";
 
 export default function RootLayout({children}) {
     return (

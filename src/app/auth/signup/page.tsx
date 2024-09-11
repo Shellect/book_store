@@ -1,10 +1,10 @@
 'use client';
 import {useState} from "react";
 import Link from "next/link";
-import {signUp} from "@/lib/auth.ts";
-import {SignUpSchema} from "@/lib/zod";
+import {signUp} from "@/app/actions";
+import {SignUpSchema} from "@/lib/definitions";
 import {FormState} from "@/lib/definitions";
-import {InputField} from "@/components/AuthForm";
+import {InputField} from "@/components/ui";
 import {useRouter} from "next/navigation";
 
 export default function () {
@@ -19,8 +19,7 @@ export default function () {
         event.preventDefault();
         const parseResult = SignUpSchema.safeParse({username, email, password, confirmPassword});
         if (parseResult.success) {
-            const {message} = await signUp(username, email, password)
-            setMessage(message);
+            setMessage(await signUp(username, email, password));
             router.push('/');
         } else {
             setErrors(parseResult.error.flatten().fieldErrors);

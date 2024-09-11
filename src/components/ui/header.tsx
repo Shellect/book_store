@@ -1,7 +1,7 @@
 import ActiveLink from "../activeLink";
 import Link from "next/link";
 
-export function Header() {
+export default function () {
     return (
         <header>
             <nav className={"navbar navbar-expand-lg bg-warning"}>
