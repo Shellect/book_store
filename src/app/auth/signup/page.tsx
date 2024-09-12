@@ -45,8 +45,9 @@ export default function () {
                     </div>
                 </form>
             </div>
-            <p className="mt-3">Already have an account? <Link className="link-warning" href="/auth/signin">Sign
-                In</Link></p>
+            <p className="mt-3">
+                Already have an account? <Link className="link-warning" href="/auth/signin">Sign In</Link>
+            </p>
         </div>
     );
 }
